@@ -1,0 +1,27 @@
+%YAML1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions:
+  - js
+
+scope: source.vue.js
+
+contexts:
+
+  main:
+    - match: ''
+      push: 'Packages/Babel/JavaScript (Babel).sublime-syntax'
+      with_prototype:
+      - match: \b(static)\s*\b(template)\s*(=)\s*
+        captures:
+          1: storage.type.static.js
+          2: variable.other.property.js
+          3: storage.type.js
+        push:
+          - match: '`'
+            push: 'Packages/HTML/HTML.sublime-syntax'
+            with_prototype:
+              - match: '`'
+                pop: true
+          - match: ''
+            pop: true
