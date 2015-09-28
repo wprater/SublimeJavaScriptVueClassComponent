@@ -21,7 +21,7 @@ contexts:
           - match: '`'
             push: 'Packages/HTML/HTML.sublime-syntax'
             with_prototype:
-              - match: '`'
+              - match: '[^\\]`'
                 pop: true
           - match: ''
             pop: true
