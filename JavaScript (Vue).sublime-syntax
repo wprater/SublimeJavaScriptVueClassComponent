@@ -12,7 +12,7 @@ contexts:
     - match: ''
       push: 'Packages/Babel/JavaScript (Babel).sublime-syntax'
       with_prototype:
-      - match: \b(static)\s*\b(template)\s*(=)\s*
+      - match: \b(static)\s*\b(template|partials)\s*(=)\s*
         captures:
           1: storage.type.static.js
           2: variable.other.property.js
